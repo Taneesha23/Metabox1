@@ -1,0 +1,134 @@
+:root {
+  --bg: #1f2a37;
+  --panel: #2b3a4b;
+  --square: #364a5f;
+  --square-hover: #40566e;
+  --text: #f3f1ec;
+  --x-color: #ff7a6b;
+  --o-color: #4fd1c5;
+  --win: #f6d365;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.game {
+  width: 100%;
+  max-width: 360px;
+  padding: 24px 16px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-size: 2rem;
+}
+
+/* ---------- Score ---------- */
+.scoreboard {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.score {
+  flex: 1;
+  padding: 10px 6px;
+  background: var(--panel);
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.score span {
+  margin-left: 4px;
+}
+
+.score-x { color: var(--x-color); }
+.score-o { color: var(--o-color); }
+.score-draw { color: var(--text); }
+
+/* ---------- Status ---------- */
+#status {
+  min-height: 1.5em;
+  margin: 0 0 16px;
+  font-size: 1.2rem;
+}
+
+/* ---------- Board ---------- */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.square {
+  aspect-ratio: 1;
+  border: none;
+  border-radius: 8px;
+  background: var(--square);
+  font-family: inherit;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.square:hover:not(:disabled) {
+  background: var(--square-hover);
+}
+
+.square:focus-visible,
+.buttons button:focus-visible {
+  outline: 3px solid var(--win);
+  outline-offset: 2px;
+}
+
+.square.x { color: var(--x-color); }
+.square.o { color: var(--o-color); }
+
+/* A filled square or a locked board is not clickable */
+.square:disabled {
+  cursor: not-allowed;
+}
+
+/* Winning line highlight */
+.square.win {
+  background: var(--win);
+  color: var(--bg);
+}
+
+/* ---------- Buttons ---------- */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.buttons button {
+  padding: 10px 18px;
+  border: 2px solid var(--text);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.buttons button:hover {
+  background: var(--text);
+  color: var(--bg);
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tic-Tac-Toe</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game">
+    <h1>Tic-Tac-Toe</h1>
+
+    <!-- Score: kept across rounds -->
+    <section class="scoreboard" aria-label="Score">
+      <div class="score score-x">X <span id="score-x">0</span></div>
+      <div class="score score-draw">Draws <span id="score-draw">0</span></div>
+      <div class="score score-o">O <span id="score-o">0</span></div>
+    </section>
+
+    <!-- Status message: whose turn / who won / draw -->
+    <p id="status" aria-live="polite">X's turn</p>
+
+    <!-- Board: 9 buttons, filled in by script.js -->
+    <div id="board" class="board"></div>
+
+    <div class="buttons">
+      <button id="new-round" type="button">New round</button>
+      <button id="reset-scores" type="button">Reset scores</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
